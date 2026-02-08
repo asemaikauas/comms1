@@ -489,7 +489,6 @@ img:hover {
 }
 
 .card:hover {
-    background: #ffffff;
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
@@ -508,7 +507,7 @@ img:hover {
 .card:hover .card-number,
 .card:hover .card-title,
 .card:hover .card-description {
-    color: #2f2f2f;
+    color: #ffffff;
 }
 
 .card-title {
