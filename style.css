@@ -273,7 +273,7 @@ img:hover {
     margin: 0 auto;
     padding: 4rem 3rem;
     background: var(--color-surface);
-    border-radius: 32px;
+    border-radius: 0;
     box-shadow: var(--shadow-md);
 }
 
@@ -282,7 +282,7 @@ img:hover {
     margin: 3rem auto;
     padding: 3rem;
     background: #ffffff;
-    border-radius: 32px;
+    border-radius: 0;
     box-shadow: none;
 }
 
@@ -402,6 +402,12 @@ img:hover {
     margin-top: 3rem;
 }
 
+@media (min-width: 1025px) {
+    .features-section .grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
 .space-card {
     background: #EAB741;
     border-radius: 16px;
@@ -460,8 +466,8 @@ img:hover {
 
 /* ===== Cards ===== */
 .card {
-    background: linear-gradient(135deg, rgba(87, 6, 140, 0.08), rgba(61, 4, 98, 0.2));
-    border: 2px solid var(--color-border);
+    background: #26471f;
+    border: none;
     border-radius: 16px;
     padding: 2.5rem;
     min-height: 250px;
@@ -477,16 +483,13 @@ img:hover {
     left: 0;
     width: 100%;
     height: 4px;
-    background: linear-gradient(90deg,
-            var(--color-highlight),
-            var(--color-red),
-            var(--color-accent));
+    background: #ffffff;
     transform: scaleX(0);
     transition: var(--transition);
 }
 
 .card:hover {
-    border-color: var(--color-accent);
+    background: #ffffff;
     transform: translateY(-8px);
     box-shadow: var(--shadow-lg);
 }
@@ -499,21 +502,23 @@ img:hover {
     font-family: var(--font-heading);
     font-size: 3rem;
     font-weight: 700;
-    color: #2f2f2f;
+    color: #ffffff;
 }
 
-.card:hover .card-number {
+.card:hover .card-number,
+.card:hover .card-title,
+.card:hover .card-description {
     color: #2f2f2f;
 }
 
 .card-title {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #2f2f2f;
+    color: #ffffff;
 }
 
 .card-description {
-    color: var(--color-text);
+    color: #ffffff;
 }
 
 /* ===== CTA ===== */
@@ -523,7 +528,7 @@ img:hover {
     padding: 5rem 3rem;
     text-align: center;
     background: linear-gradient(135deg, #3d0462, #57068c, #ab83c6);
-    border-radius: 24px;
+    border-radius: 0;
     box-shadow: var(--shadow-md);
 }
 
