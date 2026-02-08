@@ -264,6 +264,18 @@ img:hover {
     transform: translateY(-1px);
 }
 
+.cta .cta-button {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #2f2f2f;
+}
+
+.cta .cta-button:hover {
+    background: #f2f2f2;
+    border-color: #f2f2f2;
+    color: #2f2f2f;
+}
+
 /* ===== Sections ===== */
 .section,
 .creative-spaces,
@@ -526,7 +538,7 @@ img:hover {
     margin: 0 auto;
     padding: 5rem 3rem;
     text-align: center;
-    background: linear-gradient(135deg, #3d0462, #57068c, #ab83c6);
+    background: #d461a4;
     border-radius: 0;
     box-shadow: var(--shadow-md);
 }
@@ -534,12 +546,12 @@ img:hover {
 .cta-title {
     font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    color: #2f2f2f;
+    color: #ffffff;
 }
 
 .cta-subtitle {
     font-size: 1.25rem;
-    color: #2f2f2f;
+    color: #ffffff;
     margin-bottom: 2rem;
 }
 
