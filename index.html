@@ -25,7 +25,7 @@
                 <li><a href="#involve">Involve</a></li>
                 <li><a href="#spaces">Spaces</a></li>
                 <li><a href="#inside">Inside</a></li>
-                <li><a href="#features">Features</a></li>
+                <li><a href="#interactive-test">Interactive Test</a></li>
             </ul>
         </div>
     </nav>
@@ -80,6 +80,9 @@
             <div class="space-card">
                 <div class="space-image-wrapper">
                     <img src="media/music.jpg" alt="Music Production Studio">
+                    <div class="space-hover-info">
+                        <p>Record, mix, and master with industry-grade equipment and expert support.</p>
+                    </div>
                 </div>
                 <p class="space-title">Music Production Studio</p>
             </div>
@@ -87,6 +90,9 @@
             <div class="space-card">
                 <div class="space-image-wrapper">
                     <img src="media/arts_gallery.png" alt="Design Studio">
+                    <div class="space-hover-info">
+                        <p>Rotating exhibitions spotlight regional voices next to global innovators.</p>
+                    </div>
                 </div>
                 <p class="space-title">Art Gallery</p>
             </div>
@@ -94,8 +100,43 @@
             <div class="space-card">
                 <div class="space-image-wrapper">
                     <img src="media/design.png" alt="Lab Spaces">
+                    <div class="space-hover-info">
+                        <p>Flexible labs invite experimentation across media, tech, and fabrication.</p>
+                    </div>
                 </div>
                 <p class="space-title">Lab Spaces</p>
+            </div>
+        </div>
+
+        <div class="spaces-grid">
+            <div class="space-card">
+                <div class="space-image-wrapper">
+                    <img src="media/performance.png" alt="Performance Hall">
+                    <div class="space-hover-info">
+                        <p>An immersive venue engineered for bold concerts, dance, and theater.</p>
+                    </div>
+                </div>
+                <p class="space-title">Performance Hall</p>
+            </div>
+
+            <div class="space-card">
+                <div class="space-image-wrapper">
+                    <img src="media/design.jpg" alt="Design Studio">
+                    <div class="space-hover-info">
+                        <p>Collaborative studio tables keep prototypes and sketches flowing.</p>
+                    </div>
+                </div>
+                <p class="space-title">Design Studio</p>
+            </div>
+
+            <div class="space-card">
+                <div class="space-image-wrapper">
+                    <img src="red theater/redtheater.jpg" alt="Red Theater">
+                    <div class="space-hover-info">
+                        <p>Our signature red room hosts boundary-pushing performances nightly.</p>
+                    </div>
+                </div>
+                <p class="space-title">Red Theater</p>
             </div>
         </div>
     </section>
@@ -113,51 +154,143 @@
         </div>
     </section>
 
-    <section id="features" class="features-section">
-        <h2 class="section-title">Our Features</h2>
-        <p class="section-subtitle">Explore what makes us unique</p>
+    <!-- Interactive Quiz -->
+    <section class="quiz-section" id="interactive-test">
+        <div class="quiz-header">
+            <p class="eyebrow">Interactive Test</p>
+            <h2 class="section-title">How Well Do You Know The Arts Center?</h2>
+            <p class="section-subtitle">Submit each answer to reveal the next question and see instant feedback.</p>
+        </div>
 
-        <div class="grid">
-            <div class="card">
-                <div class="card-number">01</div>
-                <h3 class="card-title">Performance Hall</h3>
-                <p class="card-description">A state-of-the-art venue hosting concerts</p>
-            </div>
+        <div class="quiz-grid">
+            <article class="quiz-card" data-correct="B"
+                data-correct-message="Exactly! The Arts Center launched in 2019." data-wrong-message="Not quite—The Arts Center officially opened in 2019">
+                <p class="quiz-question">1. When was The Arts Center at NYU Abu Dhabi founded?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-option="A"
+                        style="--option-color: linear-gradient(120deg, #d461a4, #f3e97a);">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">2014</span>
+                    </button>
+                    <button class="quiz-option" data-option="B"
+                        style="--option-color: linear-gradient(120deg, #3d0462, #ab83c6);">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">2019</span>
+                    </button>
+                    <button class="quiz-option" data-option="C"
+                        style="--option-color: linear-gradient(120deg, #ecb841, #f7d26a);">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">2021</span>
+                    </button>
+                    <button class="quiz-option" data-option="D"
+                        style="--option-color: linear-gradient(120deg, #26471f, #5e8d4e);">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">2010</span>
+                    </button>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+                <button class="quiz-submit" type="button">Submit Answer</button>
+            </article>
 
-            <div class="card">
-                <div class="card-number">02</div>
-                <h3 class="card-title">Music Studio</h3>
-                <p class="card-description">Professional recording and sound design spaces</p>
-            </div>
+            <article class="quiz-card" data-correct="C"
+                data-correct-message="Correct! The Arts Center thrives by connecting performance, education, and community engagement."
+                data-wrong-message="Almost! Its mission is to link performance, education, and community engagement.">
+                <p class="quiz-question">2. What is the primary mission of The Arts Center at NYU Abu Dhabi?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-option="A"
+                        style="--option-color: linear-gradient(120deg, #f06f8d, #f3e97a);">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">To host only student performances</span>
+                    </button>
+                    <button class="quiz-option" data-option="B"
+                        style="--option-color: linear-gradient(120deg, #4c2a85, #8c6ff7);">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">To provide studio space exclusively for faculty</span>
+                    </button>
+                    <button class="quiz-option" data-option="C"
+                        style="--option-color: linear-gradient(120deg, #ecb841, #f7d26a);">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">To connect performance, education, and community</span>
+                    </button>
+                    <button class="quiz-option" data-option="D"
+                        style="--option-color: linear-gradient(120deg, #26471f, #5e8d4e);">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">To focus solely on traditional music rehearsal</span>
+                    </button>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+                <button class="quiz-submit" type="button">Submit Answer</button>
+            </article>
 
-            <div class="card">
-                <div class="card-number">03</div>
-                <h3 class="card-title">Lab Spaces</h3>
-                <p class="card-description">A flexible studio for visual arts</p>
-            </div>
+            <article class="quiz-card" data-correct="D"
+                data-correct-message="Absolutely! The lineup spans diverse art forms and collaborations."
+                data-wrong-message="Not quite—The season features an interdisciplinary mix of artists and genres.">
+                <p class="quiz-question">3. What kinds of performances does The Arts Center season typically include?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-option="A"
+                        style="--option-color: linear-gradient(120deg, #ff6f61, #de4313);">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Only classical music concerts</span>
+                    </button>
+                    <button class="quiz-option" data-option="B"
+                        style="--option-color: linear-gradient(120deg, #2c3e50, #4ca1af);">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Only academic lectures</span>
+                    </button>
+                    <button class="quiz-option" data-option="C"
+                        style="--option-color: linear-gradient(120deg, #eacda3, #d6ae7b);">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Only music concerts</span>
+                    </button>
+                    <button class="quiz-option" data-option="D"
+                        style="--option-color: linear-gradient(120deg, #4776e6, #8e54e9);">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">A mix of music, theater, dance, talks, and interdisciplinary performances</span>
+                    </button>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+                <button class="quiz-submit" type="button">Submit Answer</button>
+            </article>
 
-            <div class="card">
-                <div class="card-number">04</div>
-                <h3 class="card-title">Workshops</h3>
-                <p class="card-description">Experimental environments for research-driven art</p>
-            </div>
+            <article class="quiz-card" data-correct="D"
+                data-correct-message="Spot on! Events welcome the NYUAD community and the public."
+                data-wrong-message="Try again—the Arts Center welcomes both the NYUAD community and the general public.">
+                <p class="quiz-question">4. Who can attend most events at The Arts Center at NYU Abu Dhabi?</p>
+                <div class="quiz-options">
+                    <button class="quiz-option" data-option="A"
+                        style="--option-color: linear-gradient(120deg, #ff9a9e, #fad0c4);">
+                        <span class="option-letter">A</span>
+                        <span class="option-text">Only NYU Abu Dhabi faculty</span>
+                    </button>
+                    <button class="quiz-option" data-option="B"
+                        style="--option-color: linear-gradient(120deg, #2193b0, #6dd5ed);">
+                        <span class="option-letter">B</span>
+                        <span class="option-text">Only registered NYU Abu Dhabi students</span>
+                    </button>
+                    <button class="quiz-option" data-option="C"
+                        style="--option-color: linear-gradient(120deg, #cc2b5e, #753a88);">
+                        <span class="option-letter">C</span>
+                        <span class="option-text">Only invited guests</span>
+                    </button>
+                    <button class="quiz-option" data-option="D"
+                        style="--option-color: linear-gradient(120deg, #00c6ff, #0072ff);">
+                        <span class="option-letter">D</span>
+                        <span class="option-text">Both the NYU Abu Dhabi community and the general public</span>
+                    </button>
+                </div>
+                <p class="quiz-feedback" aria-live="polite"></p>
+                <button class="quiz-submit" type="button">Submit Answer</button>
+            </article>
+        </div>
 
-            <div class="card">
-                <div class="card-number">05</div>
-                <h3 class="card-title">Showcases</h3>
-                <p class="card-description">Hands-on sessions, lectures, and artist talks</p>
-            </div>
-
-            <div class="card">
-                <div class="card-number">06</div>
-                <h3 class="card-title">Design Studio</h3>
-                <p class="card-description">A platform for NYUAD students to present original work</p>
-            </div>
+        <div class="quiz-complete" aria-live="polite" aria-hidden="true" tabindex="-1">
+            <h3>Great job!</h3>
+            <p>You’ve completed the quiz. Keep exploring the Arts Center experience!</p>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <div class="cta">
+    <div class="cta" id="cta">
         <h2 class="cta-title">Ready to Explore?</h2>
         <p class="cta-subtitle">Join us and experience creativity like never before</p>
         <button class="cta-button">Visit Arts Center!</button>
@@ -188,6 +321,7 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 
 </html>

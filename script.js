@@ -1,0 +1,143 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const quizCards = Array.from(document.querySelectorAll('.quiz-card'));
+    const completionMessage = document.querySelector('.quiz-complete');
+    const resetFunctions = [];
+
+    if (completionMessage && !completionMessage.hasAttribute('aria-hidden')) {
+        completionMessage.setAttribute('aria-hidden', 'true');
+    }
+
+    const activateCard = (index) => {
+        quizCards.forEach((card, idx) => {
+            card.classList.toggle('is-active', idx === index);
+        });
+    };
+
+    const showCompletion = () => {
+        if (completionMessage) {
+            completionMessage.classList.add('is-visible');
+            completionMessage.setAttribute('aria-hidden', 'false');
+            completionMessage.focus();
+        }
+    };
+
+    const resetQuiz = () => {
+        resetFunctions.forEach((fn) => fn());
+
+        if (completionMessage) {
+            completionMessage.classList.remove('is-visible');
+            completionMessage.setAttribute('aria-hidden', 'true');
+        }
+
+        if (quizCards.length) {
+            activateCard(0);
+        }
+    };
+
+    quizCards.forEach((card, index) => {
+        const options = Array.from(card.querySelectorAll('.quiz-option'));
+        const feedback = card.querySelector('.quiz-feedback');
+        const submitButton = card.querySelector('.quiz-submit');
+        const correctLetter = card.dataset.correct;
+        const isLastCard = index === quizCards.length - 1;
+        let selectedOption = null;
+
+        const resetCard = () => {
+            selectedOption = null;
+            card.classList.remove('is-answered', 'is-active');
+
+            options.forEach((opt) => {
+                opt.classList.remove('is-selected', 'is-correct', 'is-incorrect');
+                opt.disabled = false;
+            });
+
+            if (feedback) {
+                feedback.textContent = '';
+                feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+            }
+
+            if (submitButton) {
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit Answer';
+            }
+        };
+
+        resetFunctions.push(resetCard);
+
+        options.forEach((option) => {
+            option.addEventListener('click', () => {
+                if (card.classList.contains('is-answered')) {
+                    return;
+                }
+
+                options.forEach((opt) => opt.classList.remove('is-selected', 'is-correct', 'is-incorrect'));
+                option.classList.add('is-selected');
+                selectedOption = option;
+
+                if (feedback) {
+                    feedback.textContent = '';
+                    feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+                }
+
+                if (submitButton) {
+                    submitButton.disabled = false;
+                }
+            });
+        });
+
+        if (submitButton) {
+            submitButton.textContent = 'Submit Answer';
+
+            submitButton.addEventListener('click', () => {
+                if (!selectedOption) {
+                    if (feedback) {
+                        feedback.textContent = 'Please select an option first.';
+                        feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+                    }
+                    return;
+                }
+
+                if (!card.classList.contains('is-answered')) {
+                    card.classList.add('is-answered');
+                    const isCorrect = selectedOption.dataset.option === correctLetter;
+                    selectedOption.classList.add(isCorrect ? 'is-correct' : 'is-incorrect');
+
+                    if (!isCorrect) {
+                        const correctOption = options.find((opt) => opt.dataset.option === correctLetter);
+                        if (correctOption) {
+                            correctOption.classList.add('is-selected', 'is-correct');
+                        }
+                    }
+
+                    if (feedback) {
+                        const message = isCorrect ? card.dataset.correctMessage : card.dataset.wrongMessage;
+                        feedback.textContent = message;
+                        feedback.classList.remove('feedback-correct', 'feedback-incorrect');
+                        feedback.classList.add(isCorrect ? 'feedback-correct' : 'feedback-incorrect');
+                    }
+
+                    options.forEach((opt) => {
+                        opt.disabled = true;
+                    });
+
+                    submitButton.textContent = isLastCard ? 'Finish Quiz' : 'Next Question';
+                    return;
+                }
+
+                if (index + 1 < quizCards.length) {
+                    activateCard(index + 1);
+                } else {
+                    showCompletion();
+                }
+            });
+        }
+    });
+
+    resetQuiz();
+
+    window.addEventListener('pageshow', (event) => {
+        if (event.persisted) {
+            resetQuiz();
+        }
+    });
+});
