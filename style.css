@@ -109,6 +109,7 @@ img:hover {
 }
 
 /* ===== Navigation ===== */
+/* Sticky primary nav so anchor links remain reachable while scrolling */
 .navbar {
     position: sticky;
     top: 0;
@@ -172,6 +173,7 @@ img:hover {
 }
 
 /* ===== Hero ===== */
+/* Full-width hero mixes imagery with overlay text and a CTA */
 .hero {
     max-width: 1400px;
     margin: 3rem auto;
@@ -236,6 +238,7 @@ img:hover {
 }
 
 /* ===== Buttons ===== */
+/* Shared button treatment for inline and block CTAs */
 .cta-btn,
 .cta-button {
     display: inline-flex;
@@ -289,6 +292,7 @@ img:hover {
 }
 
 /* ===== Sections ===== */
+/* Common scaffold for the narrative blocks below the fold */
 .section,
 .features-section {
     max-width: 1400px;
@@ -309,6 +313,7 @@ img:hover {
     box-shadow: none;
 }
 
+/* Two-column story encouraging visitors to collaborate with artists */
 .membership-highlight {
     max-width: 1400px;
     margin: 3rem auto;
@@ -329,6 +334,7 @@ img:hover {
     text-align: center;
 }
 
+/* Image/text split layout that collapses on smaller breakpoints */
 .membership-content {
     display: flex;
     gap: 2rem;
@@ -420,6 +426,7 @@ img:hover {
     line-height: 1.8;
 }
 
+/* Utility sections for grids and embedded video cards */
 .creative-spaces,
 .video-section,
 .features-section {
@@ -434,6 +441,7 @@ img:hover {
 }
 
 /* ===== Grids ===== */
+/* Responsive grid used for the facility cards */
 .spaces-grid,
 .grid {
     display: grid;
@@ -456,6 +464,7 @@ img:hover {
     }
 }
 
+/* Facility tiles rise/scale slightly to signal interactivity */
 .space-card {
     background: #EAB741;
     border-radius: 16px;
@@ -502,6 +511,7 @@ img:hover {
     background: #EAB741;
 }
 
+/* Tooltip bubble that fades in when each space card is hovered */
 .space-hover-info {
     position: absolute;
     right: 1.25rem;
@@ -547,6 +557,7 @@ img:hover {
 }
 
 /* ===== Cards ===== */
+/* Gradient feature cards used for quick highlights */
 .card {
     background: #26471f;
     border: none;
@@ -603,6 +614,7 @@ img:hover {
 }
 
 /* ===== CTA ===== */
+/* Bold banner call-to-action pushing visitors toward booking */
 .cta {
     width: 100%;
     max-width: none;
@@ -627,6 +639,7 @@ img:hover {
 }
 
 /* ===== Quiz Section ===== */
+/* Multi-step quiz cards; JS toggles the active one */
 .quiz-section {
     max-width: 1400px;
     width: 80%;
@@ -695,6 +708,7 @@ img:hover {
 }
 
 
+/* Answer pill styles rely on dynamic classes for state changes */
 .quiz-option {
     border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 20px;
@@ -806,6 +820,7 @@ img:hover {
     color: #ffe0e0;
 }
 
+/* Submit button copy swaps between Submit/Next/Finish labels */
 .quiz-submit {
     align-self: flex-end;
     padding: 0.9rem 2.25rem;
@@ -865,6 +880,7 @@ img:hover {
 }
 
 /* ===== Footer ===== */
+/* Mirror contact + social icons while blending into page background */
 .footer {
     max-width: 1400px;
     margin: 0 auto;

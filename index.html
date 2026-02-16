@@ -6,16 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arts Center</title>
 
+    <!-- Core site styles for layout and theming -->
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Playfair Display + Inter font pairing for editorial feel -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <!-- Sticky navigation keeps anchor links accessible across the page -->
     <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo"><strong>Arts Center</strong></a>
@@ -29,6 +32,7 @@
         </div>
     </nav>
 
+    <!-- Hero pairs the marketing image with a call-to-action anchor -->
     <div class="hero">
         <div class="hero-media">
             <img src="media/arts_center.png" alt="Arts Center" class="hero-image">
@@ -40,6 +44,7 @@
         <a class="cta-btn" href="#involve">Explore Now</a>
     </div>
 
+    <!-- About section gives concisely tells about the organization -->
     <section id="about" class="about-section">
         <p class="about-message">
             The Arts Center at NYU Abu Dhabi is a dynamic space where performance, education, and
@@ -49,6 +54,7 @@
         </p>
     </section>
 
+    <!-- Recruitment block describing ways to get involved -->
     <section id="involve" class="membership-highlight">
         <h2 class="section-title">Get Involved</h2>
         <p class="section-subtitle membership-subtitle">Co-create with resident artists</p>
@@ -72,6 +78,7 @@
     </section>
 
 
+    <!-- Card grids showcasing the different creative spaces on campus -->
     <section id="spaces" class="creative-spaces">
         <h2 class="section-title">Creative Spaces</h2>
         <p class="section-subtitle">Discover our world-class facilities</p>
@@ -141,6 +148,7 @@
         </div>
     </section>
 
+    <!-- Embedded tour video gives visitors a quick virtual walkthrough -->
     <section id="inside" class="video-section">
         <h2 class="section-title">Experience the Arts Center</h2>
         <p class="section-subtitle">Take a virtual tour of our facilities</p>
@@ -154,7 +162,7 @@
         </div>
     </section>
 
-    <!-- Interactive Quiz -->
+    <!-- Interactive Quiz uses progressive cards to avoid overwhelming users -->
     <section class="quiz-section" id="interactive-test">
         <div class="quiz-header">
             <h2 class="section-title">How Well Do You Know The Arts Center?</h2>
@@ -287,7 +295,7 @@
 
     </section>
 
-    <!-- Call to Action -->
+    <!-- External booking CTA encourages visitors to plan an in-person visit -->
     <div class="cta" id="cta">
         <h2 class="cta-title">Ready to Explore?</h2>
         <p class="cta-subtitle">Join us and experience creativity like never before</p>
@@ -295,7 +303,7 @@
             rel="noopener noreferrer">Book Your Visit!</a>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer repeats contact touchpoints and social handles -->
     <footer class="footer">
         <div class="footer-content">
             <div class="social-links">
@@ -320,6 +328,7 @@
         </div>
     </footer>
 
+    <!-- Quiz behavior and other interactivity -->
     <script src="script.js"></script>
 </body>
 
