@@ -507,6 +507,7 @@ img:hover {
 
 .space-hover-info p {
     margin: 0;
+    color: #ffffff;
 }
 
 .space-card:hover .space-hover-info {
@@ -749,6 +750,14 @@ img:hover {
     transform: none;
     background: rgba(255, 255, 255, 0.12);
     color: #ffffff;
+}
+
+.quiz-option.is-correct {
+    border-color: #ffffff;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+.quiz-option.is-incorrect {
     border-color: #c73939;
     box-shadow: 0 0 0 2px rgba(199, 57, 57, 0.2);
 }
@@ -804,20 +813,6 @@ img:hover {
     cursor: not-allowed;
     transform: none;
     box-shadow: none;
-}
-
-.quiz-complete {
-    margin-top: 2rem;
-    padding: 2rem;
-    background: #2f2f2f;
-    border-radius: 24px;
-    color: #ffffff;
-    text-align: center;
-    display: none;
-}
-
-.quiz-complete.is-visible {
-    display: block;
 }
 
 @keyframes fadeIn {

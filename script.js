@@ -1,11 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const quizCards = Array.from(document.querySelectorAll('.quiz-card'));
-    const completionMessage = document.querySelector('.quiz-complete');
     const resetFunctions = [];
-
-    if (completionMessage && !completionMessage.hasAttribute('aria-hidden')) {
-        completionMessage.setAttribute('aria-hidden', 'true');
-    }
 
     const activateCard = (index) => {
         quizCards.forEach((card, idx) => {
@@ -13,21 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
-    const showCompletion = () => {
-        if (completionMessage) {
-            completionMessage.classList.add('is-visible');
-            completionMessage.setAttribute('aria-hidden', 'false');
-            completionMessage.focus();
-        }
-    };
-
     const resetQuiz = () => {
         resetFunctions.forEach((fn) => fn());
-
-        if (completionMessage) {
-            completionMessage.classList.remove('is-visible');
-            completionMessage.setAttribute('aria-hidden', 'true');
-        }
 
         if (quizCards.length) {
             activateCard(0);
@@ -58,7 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (submitButton) {
                 submitButton.disabled = false;
-                submitButton.textContent = 'Submit Answer';
+                submitButton.textContent = 'Submit';
+                delete submitButton.dataset.resetReady;
             }
         };
 
@@ -86,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (submitButton) {
-            submitButton.textContent = 'Submit Answer';
+            submitButton.textContent = 'Submit';
 
             submitButton.addEventListener('click', () => {
                 if (!selectedOption) {
@@ -127,7 +110,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (index + 1 < quizCards.length) {
                     activateCard(index + 1);
                 } else {
-                    showCompletion();
+                    if (submitButton.dataset.resetReady === 'true') {
+                        delete submitButton.dataset.resetReady;
+                        resetQuiz();
+                    } else {
+                        submitButton.textContent = 'Good Job!';
+                        submitButton.dataset.resetReady = 'true';
+                    }
                 }
             });
         }
